@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# Projeto: Gerenciamento de Imagens com Expo (Câmera e Galeria)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este projeto consiste em uma aplicação mobile desenvolvida em **React Native** com **Expo**, permitindo que o usuário tire fotos utilizando a câmera nativa do dispositivo, selecione imagens da galeria e salve os arquivos diretamente no armazenamento do celular.
 
-## Get started
+---
 
-1. Install dependencies
+## Bibliotecas Utilizadas
 
-   ```bash
-   npm install
-   ```
+Para a manipulação e persistência das imagens, foram utilizadas duas bibliotecas oficiais do ecossistema Expo:
 
-2. Start the app
+### 1. `expo-image-picker`
+Responsável pela **captura e seleção de mídias**. Permite interagir diretamente com a câmera e com a biblioteca de fotos do sistema operacional.
 
-   ```bash
-   npx expo start
-   ```
+* **`ImagePicker.requestCameraPermissionsAsync()`**: Solicita a autorização do usuário para acessar a câmera do dispositivo.
+* **`ImagePicker.launchCameraAsync()`**: Abre a interface nativa da câmera para captura de fotos em tempo real.
+* **`ImagePicker.requestMediaLibraryPermissionsAsync()`**: Solicita a autorização para leitura da galeria de fotos do celular.
+* **`ImagePicker.launchImageLibraryAsync()`**: Abre a galeria nativa do dispositivo para que o usuário escolha uma imagem existente.
 
-In the output, you'll find options to open the app in a
+### 2. `expo-media-library`
+Responsável pelo **armazenamento e persistência das mídias**. Permite criar e salvar arquivos diretamente na galeria do dispositivo.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* **`MediaLibrary.requestPermissionsAsync()`**: Solicita a autorização de escrita e acesso ao armazenamento do celular.
+* **`MediaLibrary.createAssetAsync(uri)`**: Pega o arquivo temporário gerado pela câmera ou galeria e o grava de forma permanente na biblioteca do celular.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Fluxo de Funcionamento
 
-When you're ready, run:
+1. **Permissões:** Antes de qualquer ação visual ou de salvamento, o aplicativo checa e solicita as permissões necessárias ao sistema operacional (iOS/Android).
+2. **Obtenção da Imagem:** O usuário escolhe entre tirar uma foto ou selecionar da galeria. O endereço do arquivo (`uri`) é armazenado no estado `imageUri` da aplicação.
+3. **Exibição:** O aplicativo exibe uma prévia da imagem selecionada na tela.
+4. **Persistência:** Ao clicar em salvar, o app pega o endereço da imagem e a grava de forma definitiva na galeria do celular.
 
-```bash
-npm run reset-project
-```
+---
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Tecnologias
+* **React Native** (com TypeScript)
+* **Expo Framework**
+* **expo-image-picker**
+* **expo-media-library**
