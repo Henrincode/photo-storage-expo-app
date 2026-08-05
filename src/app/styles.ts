@@ -1,3 +1,4 @@
+import colors from '@/utils/tailwindColors';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 250,                 // Largura fixa da caixa
     height: 250,                // Altura fixa da caixa
-    backgroundColor: '#e0e0e0', // Fundo cinza caso não haja imagem
+    backgroundColor: colors.gray[400], // Fundo cinza caso não haja imagem
     justifyContent: 'center',   // Centraliza o texto do placeholder na vertical
     alignItems: 'center',       // Centraliza o texto do placeholder na horizontal
     borderRadius: 12,           // Arredonda as bordas da caixa
