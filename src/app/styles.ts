@@ -4,59 +4,64 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   // Estilo do container principal da tela
   container: {
-    flex: 1,                   // Ocupa 100% da altura da tela
-    backgroundColor: '#f5f5f5', // Cor de fundo cinza bem claro
-    alignItems: 'center',       // Alinha os elementos filhos no centro horizontal
-    justifyContent: 'center',    // Alinha os elementos filhos no centro vertical
-    padding: 20,                // Espaçamento interno em volta da tela
+    flex: 1,
+    backgroundColor: colors.gray[800],
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    gap: 24
   },
   // Estilo do título
   title: {
-    fontSize: 22,               // Tamanho da fonte
-    fontWeight: 'bold',         // Deixa o texto em negrito
-    marginBottom: 20,           // Espaço abaixo do título
+    fontSize: 36,
+    fontWeight: '300',
+    // marginBottom: 20,
+    color: colors.gray[50]
   },
   // Estilo da caixa que contém a foto ou o placeholder
   imageContainer: {
-    width: 250,                 // Largura fixa da caixa
-    height: 250,                // Altura fixa da caixa
-    backgroundColor: colors.gray[400], // Fundo cinza caso não haja imagem
-    justifyContent: 'center',   // Centraliza o texto do placeholder na vertical
-    alignItems: 'center',       // Centraliza o texto do placeholder na horizontal
-    borderRadius: 12,           // Arredonda as bordas da caixa
-    overflow: 'hidden',         // Corta o que passar dos limites das bordas arredondadas
-    marginBottom: 20,           // Espaço abaixo do container da foto
+    width: "100%",
+    aspectRatio: 1,
+    backgroundColor: colors.gray[400],
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 12,
+    overflow: 'hidden',
+    // marginBottom: 20,
+  },
+  imageIcon: {
+    color: colors.gray[700]
   },
   // Estilo do componente de imagem dentro da caixa
   image: {
-    width: '100%',              // Preenche toda a largura da caixa pai
-    height: '100%',             // Preenche toda a altura da caixa pai
+    width: '100%',
+    height: '100%',
   },
   // Estilo do texto quando não há foto selecionada
   placeholderText: {
-    color: '#888',              // Cor cinza médio
+    color: '#888',
   },
   // Container dos botões
   buttonGroup: {
-    width: '100%',              // Ocupa toda a largura disponível
-    gap: 10,                    // Adiciona um espaço fixo entre cada botão
+    width: '100%',
+    gap: 10,
   },
   // Estilo base dos botões
   button: {
-    backgroundColor: '#007AFF', // Cor azul padrão (estilo iOS)
-    paddingVertical: 12,        // Espaçamento interno acima e abaixo do texto
-    borderRadius: 8,            // Arredonda os cantos do botão
-    alignItems: 'center',       // Centraliza o texto dentro do botão
+    backgroundColor: colors.blue[600],
+    paddingVertical: 12,
+    borderRadius: 8,
+    alignItems: 'center',
   },
   // Estilo específico que sobrescreve a cor do botão de salvar
   saveButton: {
-    backgroundColor: '#34C759', // Cor verde para destacar a ação de salvar
+    backgroundColor: colors.green[600],
   },
   // Estilo do texto dentro dos botões
   buttonText: {
-    color: '#fff',              // Cor da fonte branca
-    fontWeight: '600',         // Deixa o texto semi-negrito
-    fontSize: 16,               // Tamanho da fonte
+    color: colors.gray[50],
+    // fontWeight: '600',
+    fontSize: 24,
   },
 });
 
