@@ -20,11 +20,3 @@ Caso o professor pergunte sobre como criar álbuns, listar fotos ou apagar mídi
 * **`getAssetsAsync(options)`**: Busca e lista as mídias já existentes no dispositivo do usuário (permite paginar, filtrar por tipo, data, etc.).
 * **`deleteAssetsAsync(assets)`**: Remove um ou mais arquivos de mídia permanentemente da galeria do celular.
 * **`saveToLibraryAsync(localUri)`**: Atalho direto para salvar um arquivo na galeria padrão sem retornar a instância criada.
-
----
-
-## Diferença Importante para Apresentação
-
-* **`expo-media-library` vs `expo-document-picker`**:
-  * O `expo-media-library` é otimizado para **mídias visuais** (fotos, vídeos e áudios na galeria).
-  * Para salvar ou abrir **documentos gerais** (PDF, DOCX, XLSX), a biblioteca correta do ecossistema Expo é a **`expo-document-picker`** junto com o **`expo-file-system`**.

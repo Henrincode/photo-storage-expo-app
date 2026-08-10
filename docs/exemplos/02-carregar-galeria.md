@@ -1,4 +1,4 @@
-# 02. Carregar da Galeria (`expo-image-picker`)
+# Carregar da Galeria (`expo-image-picker`)
 
 ## 1. Carregando Uma Foto
 
@@ -6,15 +6,21 @@
 import * as ImagePicker from 'expo-image-picker';
 
 const pickPhoto = async () => {
+  // Solicita ao usuário a permissão de leitura da biblioteca/galeria de mídias e extrai a propriedade 'status'
   const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+  // Caso o usuário não conceda a permissão ('granted'), encerra a execução da função imediatamente
   if (status !== 'granted') return;
 
+  // Abre a interface nativa da galeria de fotos do dispositivo aguardando a seleção do usuário
   const result = await ImagePicker.launchImageLibraryAsync({
-    mediaTypes: ImagePicker.MediaTypeOptions.Images,
-    quality: 1,
+    mediaTypes: ImagePicker.MediaTypeOptions.Images, // Lista somente imagens
+    quality: 1, // Qualidade
   });
 
+  // Verifica se o usuário de fato selecionou uma foto (não fecho ou cancelou a seleção)
   if (!result.canceled) {
+    // Acessa o primeiro item do array de mídias retornadas ('assets') e extrai o seu caminho local (URI)
     const photoUri = result.assets[0].uri;
   }
 };
@@ -30,7 +36,7 @@ const pickVideo = async () => {
   if (status !== 'granted') return;
 
   const result = await ImagePicker.launchImageLibraryAsync({
-    mediaTypes: ImagePicker.MediaTypeOptions.Videos,
+    mediaTypes: ImagePicker.MediaTypeOptions.Videos, // Lista somente vídeos
   });
 
   if (!result.canceled) {
@@ -50,7 +56,7 @@ const pickMultiplePhotos = async () => {
 
   const result = await ImagePicker.launchImageLibraryAsync({
     mediaTypes: ImagePicker.MediaTypeOptions.Images,
-    allowsMultipleSelection: true,
+    allowsMultipleSelection: true, // Permite selecionar mais de um arquivo
     selectionLimit: 5, // Limite opcional
   });
 

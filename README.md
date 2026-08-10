@@ -1,10 +1,22 @@
-# Projeto: Gerenciamento de Imagens com Expo (Câmera e Galeria)
+# Gerenciamento de Imagens com Expo (Câmera e Galeria)
 
 Este projeto consiste em uma aplicação mobile desenvolvida em **React Native** com **Expo**, permitindo que o usuário tire fotos utilizando a câmera nativa do dispositivo, selecione imagens da galeria e salve os arquivos diretamente no armazenamento do celular.
+
+* Esboço do professor
+
+![Esboço do professor](docs/img/esboco.png)
+
+* Prints do projeto
+
+![Prints do projeto](docs/img/prints.png)
+
+
 
 ---
 
 ## Bibliotecas Utilizadas
+
+> Dica: O conteúdo abaixo traz um resumo dos principais métodos das bibliotecas utilizadas no projeto. Para consultar a documentação detalhada de cada uma, acesse o diretório [docs/](./docs/).
 
 Para a manipulação e persistência das imagens, foram utilizadas duas bibliotecas oficiais do ecossistema Expo:
 
