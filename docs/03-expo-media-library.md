@@ -12,9 +12,9 @@ Biblioteca oficial do Expo para salvar, ler e gerenciar arquivos na galeria/arma
 
 ---
 
-## Funções para Respostas Avançadas (Perguntas do Professor)
+## Funções para Respostas Avançadas
 
-Caso o professor pergunte sobre como criar álbuns, listar fotos ou apagar mídias:
+Criar álbuns, listar fotos ou apagar mídias:
 
 * **`createAlbumAsync(albumName, asset, copyAsset)`**: Cria um álbum personalizado na galeria (ex: pasta "MeuApp") e move a foto para dentro dele.
 * **`getAssetsAsync(options)`**: Busca e lista as mídias já existentes no dispositivo do usuário (permite paginar, filtrar por tipo, data, etc.).
